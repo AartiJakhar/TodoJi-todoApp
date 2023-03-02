@@ -89,14 +89,14 @@
   }
   
   .btn{
-    margin-top: 1rem;
-    display: inline-block;
+    margin: 1rem 0rem 0rem 5.5rem;
     padding:.9rem 3rem;
     font-size: 1.7rem;
     color:#fff;
     background: var(--color);
     cursor: pointer;
     border: none;
+    width: 16rem;
 
   }
   
@@ -104,4 +104,47 @@
     letter-spacing: .2rem;
     opacity: .8;
   }
-  
+  .NoteForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .NoteForm div{
+    margin: 2rem 0rem;
+    display: flex;
+    flex-direction: row;
+
+
+  }
+  .NoteForm div label{
+    letter-spacing: .2rem;
+  font-size: 1.6rem;
+  padding-right: 1rem;
+  padding-top: .4rem;
+  font-weight: 900;
+  color: #333;
+    
+  }
+  .NoteForm div input{
+ border: none;
+ font-size: 1.4rem;
+ box-shadow: 2px 3px 13px white;
+ padding: 1rem;
+ box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  color: #333;
+  width: 40rem;
+  outline:none;
+    
+  }
+  .NoteForm div textarea{
+    outline:none;
+    font-size: 1.4rem;
+    height: 11rem;
+    width: 40rem;
+ border: none;
+ box-shadow: 2px 3px 13px white;
+ padding: 1rem;
+ box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  color: #333;
+    
+  }

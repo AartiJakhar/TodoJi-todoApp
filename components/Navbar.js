@@ -49,22 +49,17 @@ export default function Navbar() {
      let data =[
       {  id:"1" ,
         name:"Home",
-        link:"/",
+        link:"/#",
 
       },
       { id:"2",
         name:"MY Todo",
-        link:"/routes/about",
-
-      },
-      { id:"2",
-        name:"About",
-        link:"/routes/about",
+        link:"/#todoLists",
 
       },
       { id:"3",
         name:"Blogs",
-        link:"/routes/blogs",
+        link:"#blogs",
 
       },
      ]

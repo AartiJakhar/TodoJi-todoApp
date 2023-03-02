@@ -1,5 +1,6 @@
 import React from 'react'
-import styles from '../../styles/basicpage/About.module.css'
+import styles from '../../styles/basicpage/AddNotes.module.css'
+import AddTodo from '../cards/AddTodo'
 export default function TodoLists() {
   return (
     <section id="todoLists" className={styles.about}>
@@ -10,8 +11,8 @@ export default function TodoLists() {
 
   <div className={styles.content}>
     <h3>We build Logo Design that build your business</h3>
-    <p>The Best Plateform to manage Our To Do list</p>
-    <a href="#"><button className={styles.btn}>Start Now</button></a>
+   
+        <AddTodo/>
   </div>
 
   <div className="image">
