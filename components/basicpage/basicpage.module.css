@@ -1,0 +1,21 @@
+/* //slider 
+ */
+ .sliderHeading{
+    font-size: 3rem;
+    color: rgb(0, 1, 55) !important;
+ }
+ .sliderPara{
+    font-size: 2rem;
+    padding: 4rem;
+    color: rgb(0, 1, 55) !important;
+ }
+ @media screen and (max-width: 800px) {
+    .sliderHeading{
+        font-size: 1.5rem;
+        
+     }
+     .sliderPara{
+        font-size: 1rem;
+        padding: 2rem;
+     }
+ }
