@@ -11,8 +11,7 @@ export default function TodoLists() {
 
   <div className={styles.content}>
     <h3>We build Logo Design that build your business</h3>
-   
-        <AddTodo/>
+          <AddTodo/>
   </div>
 
   <div className="image">
