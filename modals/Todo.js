@@ -18,7 +18,7 @@ const TodoSchema = new Schema({
         type: Date,
         default: Date.now,
     },
-});
+},{timestamps:true});
   
 // module.exports = mongoose.model('todo', TodoSchema);
 export default mongoose.models.todo || mongoose.model("todo",TodoSchema)
