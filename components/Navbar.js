@@ -59,7 +59,12 @@ export default function Navbar() {
       },
       { id:"3",
         name:"Blogs",
-        link:"#blogs",
+        link:"/#blogs",
+
+      },
+      { id:"4",
+        name:"singin",
+        link:"/userProfile/signin",
 
       },
      ]

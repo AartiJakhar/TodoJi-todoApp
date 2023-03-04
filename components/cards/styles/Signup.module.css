@@ -1,0 +1,53 @@
+.main {
+    /* background-color: rgb(10, 27, 218); */
+    display: flex;
+    margin-top:10rem;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.signupForm h1 {
+    color: white;
+    border-radius: 10px;
+    font-size: 30px;
+    background: linear-gradient(#1c22d4, var(--color));
+    padding: 15px;
+
+}
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding:0.9rem 4rem;
+    border-radius: 10px;
+    font-size: 2rem;
+    color:#fff;
+    background: linear-gradient(#1c22d4, var(--color));
+    cursor: pointer;
+    border: none;
+  }
+   .btn:hover{
+    letter-spacing: .2rem;
+    opacity: .8;
+  }
+ .signupForm{
+    border:2px solid #041a2c;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  .signupForm input{
+
+      font-size: 20px;
+  }
+  /* #email{
+  }
+  #name{
+    font-size: 20px;
+  }
+  #cpassword{
+    font-size: 20px;
+  }
+  #password{
+    font-size:20px;
+} */

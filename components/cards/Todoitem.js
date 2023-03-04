@@ -1,6 +1,6 @@
 import styles from './styles/todoItem.module.css'
 export default function Todoitem({list}) {
-  console.log(list);
+
   
   return <>
 {list&&  <div className={`${styles.todoItem}`}>
