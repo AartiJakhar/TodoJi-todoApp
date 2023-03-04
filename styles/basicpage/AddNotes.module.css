@@ -57,6 +57,10 @@
       .about .row .image img{
         width: 100vw;
       }
+      .todoList{
+        flex-direction: column !important;
+        margin: 1rem auto !important;
+      }
   }
 
 
@@ -147,4 +151,11 @@
  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   color: #333;
     
+  }
+  .todoList{
+    margin: 4rem 0rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
