@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import mainContext from "../../context/MainContext";
 import styles from  './styles/signin.module.css'
 const Signin = () => {
+  const {setUser}=useContext(mainContext)
   const [cordentials, setCordentials] = useState({ email: "", password: "" })
   const router =useRouter()
   const handleSubmit = async (e) => {
@@ -18,6 +20,7 @@ const Signin = () => {
     console.log(json)
     if (json.success) {
       localStorage.setItem('token', json.authtoken)
+      setUser(json.authtoken)
       setCordentials({ email: "", password: ""})
       setTimeout(() => {
         router.push("/")

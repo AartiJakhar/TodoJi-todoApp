@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
 import MainContext from "./MainContext.js";
 import { useQuery } from "react-query";
+import { useRouter } from "next/router.js";
 const MainStates = (props) => {
+    //check is user authenticated
+    const [user, setUser] = useState(null);
+
+    
   //get todos
   const getmytodo = async () => {
     const myTodo = await fetch(
@@ -23,16 +28,28 @@ const MainStates = (props) => {
     getmytodo
   );
   useEffect(() => {
-    if (todos.data) {
+    if (todos.data&&todos.data.todos) {
       setTodoList(todos.data.todos);
     }
   }, [todos.data]);
+  useEffect(() => {
+const token = localStorage.getItem('token')
+if(token!==null){
+    console.log(token);
+    todos.refetch()
+    setUser(token)
+}
+  }, [user]);
+
+  
 
   return (
     <MainContext.Provider
       value={{
         //todos 
-        todos,todoList,setTodoList
+        todos,todoList,setTodoList,
+        //user
+        user,setUser
       }}
     >
       {props.children}

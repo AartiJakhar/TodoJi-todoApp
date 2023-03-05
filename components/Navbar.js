@@ -1,9 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link'
 import { useRouter } from 'next/router';
-import React, {  useState } from 'react'
+import React, {  useContext, useState } from 'react'
+import mainContext from '../context/MainContext';
 import styles from '../styles/Navbar.module.css'
 export default function Navbar() {
+  const {user,setUser}=useContext(mainContext)
   const router = useRouter();
   const {pathname}=router;
   
@@ -62,14 +64,12 @@ export default function Navbar() {
         link:"/#blogs",
 
       },
-      { id:"4",
-        name:"singin",
-        link:"/userProfile/signin",
-
-      },
      ]
      const [dataList, setdataList] = useState(data);
-     
+     const signOut=()=>{
+      localStorage.removeItem("token")
+      setUser(null)
+     }
   return (
   <>
     <div className={`${styles.nav} ${dropdownToggled? styles.toggle:""} ${background || pathname!=='/'? styles.active :""} ` } >
@@ -79,27 +79,23 @@ export default function Navbar() {
       </Link>
     </div>
     <div className={styles.navrow}>
-    {pathname=== "/" ? 
       <nav>
         <ul>
           <li>
             {dataList.map((e)=>{
               return  <Link key={e.id} href={e.link}>{e.name}</Link>
+              
             })}
+            {user===null?
+            <Link href="/userProfile/signin">Singin</Link>
+            :
+            <button onClick={signOut}>logout</button>
+            
+          }
+  
           </li>
         </ul>
-      </nav>:
-
-       <nav>
-       <ul>
-         <li>
-         {dataList.map((e)=>{
-              return  <Link key={e.id} href={e.link}>{e.name}</Link>
-            })}
-         </li>
-       </ul>
-     </nav>
-      }
+      </nav>
     </div>
     <div className={`${styles.navburgur} dropbtn`}   onClick={navToggle}  >
       <div className={`dropbtn ${styles.line1}`} onClick={navToggle}></div>

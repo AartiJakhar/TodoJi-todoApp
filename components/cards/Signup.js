@@ -1,8 +1,9 @@
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from  './styles/signup.module.css'
 
 export default function Signup() {
+  const {setUser}=useContext()
   const [cordentials, setCordentials] = useState({ name: "", email: "", password: "", cpassword: "", })
 const router=useRouter()
 
@@ -24,6 +25,7 @@ const router=useRouter()
         if (json.success) {
             
           localStorage.setItem('token', json.authtoken)
+          setUser(token)
           setCordentials({name: "", email: "", password: "", cpassword: "",})
           setTimeout(() => {
             router.push("/")

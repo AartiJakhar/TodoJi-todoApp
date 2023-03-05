@@ -1,10 +1,13 @@
 import Head from 'next/head'
+import { useContext } from 'react'
 import Blog from '../components/basicpage/Blogs'
 import ImgSlider from '../components/basicpage/ImgSlider'
 import TodoLists from '../components/basicpage/TodoLists'
 import Header from '../components/Header'
+import mainContext from '../context/MainContext'
 
 export default function Home() {
+  const {user}=useContext(mainContext)
   return (
     <>
       <Head>
@@ -15,7 +18,8 @@ export default function Home() {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
       </Head>
       <Header/>
-        <TodoLists/>
+      {user===null?<div> <h1 className='m-4'>singin first to add your TODOJI</h1></div>:<TodoLists/>}
+        
         <ImgSlider/>
         <Blog/>
      

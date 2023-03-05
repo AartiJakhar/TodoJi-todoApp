@@ -26,12 +26,18 @@
 .navrow nav li {
   list-style: none;
 }
-.navrow nav a {
+.navrow nav a , .navrow nav button {
   color: #fff;
   text-decoration: none;
   padding: 0rem 1rem;
   font-size: 1.6rem;
  
+}
+.navrow nav button {
+  border: none;
+  background: none;
+  padding:.4rem 1rem;
+  box-shadow: 0 .3rem .5rem rgba(0,0,0,.3);
 }
 /* //burger  */
 .navburgur {
