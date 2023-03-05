@@ -5,10 +5,10 @@ export default function Todoitem({list}) {
   return <>
 {list&&  <div className={`${styles.todoItem}`}>
     <h3>
- {list.title}
+ {list._doc.title}
     </h3>
     <p>
-       {list.description}
+       {list._doc.description}
     </p>
   </div>}
   

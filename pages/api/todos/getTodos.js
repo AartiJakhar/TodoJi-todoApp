@@ -10,7 +10,15 @@ const handler = async( req, res)=> {
           const verify = jwt.verify(token, process.env.JWT_SECRET);
           let user = verify.user.id;
           let todos=await Todo.find({user})
-  res.status(200).json({todos:todos,success:true})
+          const newArrayOfObj = todos.map(({
+            _id: id,
+            ...rest
+          }) => ({
+            id,
+            ...rest
+          }));
+          
+  res.status(200).json({todos:newArrayOfObj,success:true})
         }else{
 
             res
@@ -20,9 +28,7 @@ const handler = async( req, res)=> {
                 success: false,
               });
         }
-    } catch (error) {
-        console.log('first');
-        
+    } catch (error) {        
         res.status(400).send({error:error,success:false})
     }
 
