@@ -1,6 +1,9 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import mainContext from '../../context/MainContext';
 import styles from '../../styles/basicpage/AddNotes.module.css'
 export default function AddTodo() {
+  const context = useContext(mainContext)
+  const {todos}=context
   const [credentials, setCredentials] = useState({note:"",title:""});
   const ChangeCredentials=(e)=>{
     setCredentials({...credentials,[e.target.name]:e.target.value})
@@ -25,6 +28,7 @@ export default function AddTodo() {
    
    const response= await addtodo.json()
    if(response.success){
+    todos.refetch()
 setCredentials({title:"",note:""})  
    }else{
 alert(`${response.error}`)
