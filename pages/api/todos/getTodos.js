@@ -10,7 +10,7 @@ const handler = async( req, res)=> {
           const verify = jwt.verify(token, process.env.JWT_SECRET);
           let user = verify.user.id;
           let todos=await Todo.find({user})
-  res.status(200).json(todos)
+  res.status(200).json({todos:todos,success:true})
         }else{
 
             res
@@ -23,7 +23,7 @@ const handler = async( req, res)=> {
     } catch (error) {
         console.log('first');
         
-        res.status(400).send({error})
+        res.status(400).send({error:error,success:false})
     }
 
 }

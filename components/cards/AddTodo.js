@@ -17,7 +17,7 @@ export default function AddTodo() {
     method: "POST",
     headers:{
       "Content-Type": "application/json",
-      'auth-token':"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQwMjMwMWJlYWNmMjFiNmFmZDc0MTJiIn0sImlhdCI6MTY3NzkwMTI5Mn0.aS0VJqBLlp-QKmYa7DDREKQNR8Kh3XgjhVNwTxFI2TU"
+      'auth-token':localStorage.getItem("token")
     },
     body: JSON.stringify(data),
    })

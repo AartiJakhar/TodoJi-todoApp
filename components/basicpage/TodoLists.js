@@ -10,15 +10,24 @@ export default function TodoLists() {
       method: "GET",
       headers:{
         "Content-Type": "application/json",
-        'auth-token':"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQwMjMwMWJlYWNmMjFiNmFmZDc0MTJiIn0sImlhdCI6MTY3NzkwMTI5Mn0.aS0VJqBLlp-QKmYa7DDREKQNR8Kh3XgjhVNwTxFI2TU"
+        'auth-token':localStorage.getItem('token')
       }
   })
  const response=await myTodo.json()
  console.log(response);
- setTodoList(response)
+ 
+ if(response.success){
+   setTodoList(response.todos)
+   console.log('first');
+   
+ }else{
+  // setTodoList({title:"no list available"})
+ }
+ console.log(response);
 }
 useEffect(() => {
-  getmytodo()
+
+    getmytodo()
 }, []);
 
   return (
