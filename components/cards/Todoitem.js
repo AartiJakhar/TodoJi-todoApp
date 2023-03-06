@@ -1,4 +1,4 @@
-import styles from './styles/todoItem.module.css'
+import styles from './styles/TodoItem.module.css'
 export default function Todoitem({list}) {
 
   

@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import React, { useContext, useEffect, useState } from "react";
-import styles from  './styles/signup.module.css'
+import styles from  './styles/Signup.module.css'
 
 export default function Signup() {
   const {setUser}=useContext()
