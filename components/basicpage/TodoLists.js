@@ -13,7 +13,7 @@ const {todos,todoList,setTodoList}=context
 
       <div className={styles.row}>
         <div className={styles.content}>
-          <h3>We build Logo Design that build your business</h3>
+          <h3>Add New Note here</h3>
           <AddTodo />
         </div>
 

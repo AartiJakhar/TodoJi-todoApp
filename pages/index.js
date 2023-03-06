@@ -18,9 +18,7 @@ export default function Home() {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
       </Head>
       <Header/>
-      {user===null?<div> <h1 className='m-4'>singin first to add your TODOJI</h1></div>:<TodoLists/>}
-        
-        <ImgSlider/>
+      {user!==null&&<TodoLists/>}
         <Blog/>
      
     </>
