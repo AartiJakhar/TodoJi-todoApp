@@ -1,9 +1,10 @@
 import { useRouter } from "next/router";
 import React, { useContext, useEffect, useState } from "react";
+import mainContext from "../../context/MainContext";
 import styles from  './styles/Signup.module.css'
 
 export default function Signup() {
-  const {setUser}=useContext()
+  const {setUser}=useContext(mainContext)
   const [cordentials, setCordentials] = useState({ name: "", email: "", password: "", cpassword: "", })
 const router=useRouter()
 
